@@ -15,7 +15,7 @@
   width: 100vw;
   height: 200vh;              /* important */
   opacity: 0.4;
-  color: #888;
+  color: 111111;
   z-index: 1;
   animation: scrollCode 25s linear infinite;
   pointer-events: none;
