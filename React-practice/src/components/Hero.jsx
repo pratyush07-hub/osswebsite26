@@ -3,7 +3,14 @@ import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import "../styles/hero.css";
 
+import emoji1 from "../assets/emoji1.png";
+import emoji2 from "../assets/emoji2.png";
+import emoji3 from "../assets/emoji3.png";
+import emoji4 from "../assets/emoji4.png";
+
 export default function Hero() {
+
+
   const lines = [
     "Hello !",
     "Welcome to OSS",
@@ -11,29 +18,40 @@ export default function Hero() {
   ];
 
   const [displayedText, setDisplayedText] = useState("");
-  const [lineIndex, setLineIndex] = useState(0); 
-  const [charIndex, setCharIndex] = useState(0); 
+  const [lineIndex, setLineIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
 
+
+  const emojis = [emoji1, emoji2, emoji3, emoji4];
+  const [emojiIndex, setEmojiIndex] = useState(0);
+
+  
   useEffect(() => {
+    const currentLine = lines[lineIndex];
     const timer = setTimeout(() => {
-      const currentLine = lines[lineIndex];
-      
-      
       setDisplayedText(currentLine.slice(0, charIndex + 1));
-      setCharIndex(prev => prev + 1);
+      setCharIndex(charIndex + 1);
 
-      
       if (charIndex + 1 === currentLine.length) {
         setTimeout(() => {
           setCharIndex(0);
-          setLineIndex((lineIndex + 1) % lines.length); 
+          setLineIndex((lineIndex + 1) % lines.length);
           setDisplayedText("");
-        }, 800); 
+        }, 800);
       }
     }, 100);
 
     return () => clearTimeout(timer);
   }, [charIndex, lineIndex]);
+
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setEmojiIndex((prev) => (prev + 1) % emojis.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="hero">
@@ -41,136 +59,134 @@ export default function Hero() {
 
     
       <div className="code-bg">
-        <pre>
-{`
-while(true){
-  System.out.println(" Open Source ");
-  contribute();
-}
+        <pre>{`while(true){ contribute(); }
+        #include <bits/stdc++.h>
+         using namespace std;
 
-#include <bits/stdc++.h>
+ string ltrim(const string &);
+ string rtrim(const string &);
+ vector<string> split(const string &);
 
-using namespace std;
+ /*
+  * Complete the 'compareTriplets' function below.
+  *
+  * The function is expected to return an INTEGER_ARRAY.
+  * The function accepts following parameters:
+  *  1. INTEGER_ARRAY a
+  *  2. INTEGER_ARRAY b
+  */
 
-string ltrim(const string &);
-string rtrim(const string &);
-vector<string> split(const string &);
+     vector<int> compareTriplets(vector<int> a, vector<int> b) {
+     int alice = 0;
+     int bob = 0;
 
-/*
- * Complete the 'compareTriplets' function below.
- *
- * The function is expected to return an INTEGER_ARRAY.
- * The function accepts following parameters:
- *  1. INTEGER_ARRAY a
- *  2. INTEGER_ARRAY b
- */
+     for(int i = 0; i < 3; i++) {
+         if(a[i] > b[i]) {
+             alice++;
+         } else if(a[i] < b[i]) {
+             bob++;
+         }
+     }
 
-    vector<int> compareTriplets(vector<int> a, vector<int> b) {
-    int alice = 0;
-    int bob = 0;
+     return {alice, bob};
+ }
 
-    for(int i = 0; i < 3; i++) {
-        if(a[i] > b[i]) {
-            alice++;
-        } else if(a[i] < b[i]) {
-            bob++;
-        }
-    }
-
-    return {alice, bob};
-}
-
-int main()
-{
-    ofstream fout(getenv("OUTPUT_PATH"));
+ int main()
+ {
+     ofstream fout(getenv("OUTPUT_PATH"));
 
     string a_temp_temp;
-    getline(cin, a_temp_temp);
+     getline(cin, a_temp_temp);
 
-    vector<string> a_temp = split(rtrim(a_temp_temp));
+     vector<string> a_temp = split(rtrim(a_temp_temp));
 
-    vector<int> a(3);
+     vector<int> a(3);
 
-    for (int i = 0; i < 3; i++) {
-        int a_item = stoi(a_temp[i]);
+     for (int i = 0; i < 3; i++) {
+         int a_item = stoi(a_temp[i]);
 
-        a[i] = a_item;
-    }
+         a[i] = a_item;
+     }
 
-    string b_temp_temp;
-    getline(cin, b_temp_temp);
+     string b_temp_temp;
+     getline(cin, b_temp_temp);
 
-    vector<string> b_temp = split(rtrim(b_temp_temp));
+     vector<string> b_temp = split(rtrim(b_temp_temp));
 
-    vector<int> b(3);
+     vector<int> b(3);
 
-    for (int i = 0; i < 3; i++) {
-        int b_item = stoi(b_temp[i]);
+     for (int i = 0; i < 3; i++) {
+         int b_item = stoi(b_temp[i]);
 
-        b[i] = b_item;
-    }
+         b[i] = b_item;
+     }
 
-    vector<int> result = compareTriplets(a, b);
+     vector<int> result = compareTriplets(a, b);
 
-    for (size_t i = 0; i < result.size(); i++) {
-        fout << result[i];
+     for (size_t i = 0; i < result.size(); i++) {
+         fout << result[i];
 
-        if (i != result.size() - 1) {
-            fout << " ";
-        }
-    }
+         if (i != result.size() - 1) {
+             fout << " ";
+         }
+     }
 
-    fout << "\n";
+     fout << "\n";
 
-    fout.close();
+     fout.close();
 
-    return 0;
-}
+     return 0;
+ }
 
-string ltrim(const string &str) {
-    string s(str);
+ string ltrim(const string &str) {
+     string s(str);
 
-    s.erase(
-        s.begin(),
-        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
-    );
+     s.erase(
+         s.begin(),
+         find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
+     );
 
-    return s;
-}
-string rtrim(const string &str) {
-    string s(str);
+     return s;
+ }
+ string rtrim(const string &str) {
+     string s(str);
 
-    s.erase(
-        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
-        s.end()
-    );
+     s.erase(
+         find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
+         s.end()
+     );
 
-    return s;
-}
-vector<string> split(const string &str) {
-    vector<string> tokens;
+     return s;
+ }
+ vector<string> split(const string &str) {
+     vector<string> tokens;
 
-    string::size_type start = 0;
-    string::size_type end = 0;
+     string::size_type start = 0;
+     string::size_type end = 0;
 
-    while ((end = str.find(" ", start)) != string::npos) {
-        tokens.push_back(str.substr(start, end - start));
+     while ((end = str.find(" ", start)) != string::npos) {
+         tokens.push_back(str.substr(start, end - start));
 
-        start = end + 1;
-    }
+         start = end + 1;
+     }
 
-    tokens.push_back(str.substr(start));
+     tokens.push_back(str.substr(start));
 
-    return tokens;
-}
+     return tokens;
+ }
 
-`.repeat(20)}
-        </pre>
+
+        `.repeat(40)}</pre>
       </div>
 
-
+      
       <div className="hero-text">
         <h1>{displayedText}</h1>
+      </div>
+
+      
+      <div className="emoji-box">
+        <img src={emojis[emojiIndex]} alt="emoji" />
       </div>
     </div>
   );

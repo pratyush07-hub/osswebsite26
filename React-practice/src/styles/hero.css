@@ -7,13 +7,13 @@
   overflow: hidden;
 }
 
-/* FULL PAGE CODE BACKGROUND */
+
 .code-bg {
   position: absolute;
   top: 0;
   left: 25%;
   width: 100vw;
-  height: 200vh;              /* important */
+  height: 200vh;              
   opacity: 0.4;
   color: 111111;
   z-index: 1;
@@ -25,11 +25,11 @@
   width: 100%;
   font-size: 14px;
   line-height: 1.6;
-  white-space: pre-wrap;      /* wrap text */
-  word-break: break-word;    /* fill screen */
+  white-space: pre-wrap;      
+  word-break: break-word;    
 }
 
-/* SMOOTH INFINITE SCROLL */
+
 @keyframes scrollCode {
   from {
     transform: translateY(0);
@@ -39,7 +39,7 @@
   }
 }
 
-/* FOREGROUND TEXT */
+
 .hero-text {
   position: absolute;
   top: 45%;
@@ -56,4 +56,19 @@
   margin-top: 10px;
   font-size: 14px;
   opacity: 0.8;
+}
+
+
+.emoji-box {
+  position: absolute;
+  right: 4%;
+  top: 95%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.emoji-box img {
+  width: 50px;
+  height: auto;
+  animation: fade 0.4s ease-in-out;
 }
