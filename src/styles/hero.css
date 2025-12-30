@@ -1,0 +1,74 @@
+.hero {
+  height: 100vh;
+  width: 100vw;
+  background: #111;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.code-bg {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 100vw;
+  height: 200vh;              
+  opacity: 0.4;
+  color: 111111;
+  z-index: 1;
+  animation: scrollCode 25s linear infinite;
+  pointer-events: none;
+}
+
+.code-bg pre {
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;      
+  word-break: break-word;    
+}
+
+
+@keyframes scrollCode {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+
+.hero-text {
+  position: absolute;
+  top: 45%;
+  left: 15%;
+  z-index: 5;
+}
+
+.hero-text h1,
+.hero-text h2 {
+  font-size: 48px;
+}
+
+.hero-text p {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+
+.emoji-box {
+  position: absolute;
+  right: 4%;
+  top: 95%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.emoji-box img {
+  width: 50px;
+  height: auto;
+  animation: fade 0.4s ease-in-out;
+}
