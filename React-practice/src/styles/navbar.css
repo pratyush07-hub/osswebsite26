@@ -54,18 +54,3 @@
 .navbar ul li:hover {
   opacity: 1;
 }
-
-.link {
-  font-weight: 400;
-  color:#ffffff;
-  text-decoration: none;
- 
-}
-
-.active-link {
-  font-weight: 600;
-  font-size: larger;
-  color:#ffffff;
-  padding-bottom: 4px;
-  text-decoration: none;
-}
