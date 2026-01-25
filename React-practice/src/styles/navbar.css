@@ -54,3 +54,12 @@
 .navbar ul li:hover {
   opacity: 1;
 }
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Optional: hover effect */
+.navbar a:hover {
+  color: #22c55e; /* green glow on hover */
+}

@@ -1,0 +1,133 @@
+  :root {
+    --navbar-height: 64px; /* adjust according to your navbar height */
+  }
+
+  /* GLOBAL RESET */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Courier New', monospace;
+    /* overflow: hidden; no scrollbar */
+  }
+
+  /* CONTAINER */
+  .achievements-container {
+    min-height: 100vh;
+  background: radial-gradient(circle at top, #2a2a2a, #0f0f0f);  color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--navbar-height); /* space below navbar */
+    align-items: center;
+    justify-content: center; /* vertically center content */
+  }
+
+  /* MAIN CONTENT */
+  .main-content {
+    width: 100%;
+    max-width: 600px; /* narrow width for vertical layout */
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  /* TITLE */
+  .title-section {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .main-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  /* CARDS STACKED VERTICALLY */
+  .cards-container {
+    display: flex;
+    flex-direction: column; /* vertical stack */
+    gap: 1rem;
+    width: 100%;
+  }
+
+  /* CARD */
+  .impact-card {
+    border: 2px solid;
+    border-radius: 24px;
+    padding: 1.0rem;
+    transition: all 0.3s ease;
+  background: radial-gradient(circle at top, #2a2a2a, #0f0f0f);  color: #e5e7eb;
+    clip-path: polygon(
+      40px 0,
+      calc(100% - 40px) 0,
+      100% 40px,
+      100% calc(100% - 40px),
+      calc(100% - 40px) 100%,
+      40px 100%,
+      0 calc(100% - 40px),
+      0 40px
+    );
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .impact-card:hover {
+    transform: translateY(-2px);
+  }
+
+  /* .gradient-border {
+    border: 2px solid transparent;
+    background-image:
+      linear-gradient(#111827, #111827),
+      linear-gradient(135deg, #6366f1, #22d3ee);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  } */
+
+
+  /* ICON */
+  .card-icon {
+    margin-bottom: 1rem;
+    color: #60a5fa;
+  }
+
+  .card-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* TEXT */
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .subtitle-box {
+    margin-top: 0.5rem;
+  }
+
+  .subtitle-text {
+    color: #9ca3af;
+    font-size: 0.85rem;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .main-title {
+      font-size: 2rem;
+    }
+
+    .main-content {
+      max-width: 90%; /* adapt on small screens */
+    }
+    .subtitle-box:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 15px 5px rgba(255, 235, 59, 0.5); /* yellow glow */
+    background: #fff59d;
+  }
+
+  }
