@@ -10,12 +10,19 @@ const Contact = () => {
             type="text"
             placeholder="[ Enter here ]"
           />
+          
+          <label>E-MAIL:</label>
+          <textarea
+            placeholder="[ Text area ]"
+            rows="6"
+          ></textarea>
 
           <label>MESSAGE:</label>
           <textarea
             placeholder="[ Text area ]"
             rows="6"
           ></textarea>
+          
 
           <button type="submit">
             <span className="arrow">▶</span> [ Execute ]

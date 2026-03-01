@@ -1,5 +1,7 @@
 .contact-page {
   min-height: 100vh;
+  padding-top: 64px; /* match your navbar height */
+  box-sizing: border-box;
   background: radial-gradient(circle at top, #2a2a2a, #0f0f0f);
   display: flex;
   justify-content: center;
@@ -32,7 +34,7 @@
   background: #2a2a2a;
   border: 1px solid #3a3a3a;
   color: #e5e5e5;
-  padding: 12px;
+  padding: 4px;
   border-radius: 6px;
   font-family: monospace;
   font-size: 14px;
