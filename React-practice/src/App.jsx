@@ -4,6 +4,8 @@ import Hero from "./components/Hero";
 import Contact from "./components/Contact";
 import "./styles/global.css";
 import Achievements from "./components/Achievements";
+import Domains from "./components/Domains";
+
 
 function App() {
   return (
@@ -17,6 +19,10 @@ function App() {
           <Route path="/" element={<Hero />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/achievements" element={<Achievements />} />
+          <Route path="/Domains" element={<Domains />} />
+
+
+
 
         </Routes>
       </div>
