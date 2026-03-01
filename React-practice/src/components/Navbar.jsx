@@ -15,7 +15,9 @@ export default function Navbar() {
         <li>
             <Link to="/">Home</Link>
           </li>
-        <li>Domains</li>
+        <li>
+            <Link to="/Domains">Domains</Link>
+          </li>
          <li>
             <Link to="/achievements">Achievements</Link>
           </li>
